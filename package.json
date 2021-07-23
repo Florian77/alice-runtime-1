@@ -1,6 +1,6 @@
 {
   "name": "alice-runtime",
-  "description": "The alice runtime is under heavy development. Expect many and uncommented breaking changes!",
+  "description": "First stable version of alice runtime.",
   "version": "1.0.0",
   "scripts": {
     "test": "set DEV_CONSOLE_FORCE_OFF=1&& npx mocha --ui bdd ./test/**/*.test.js",
