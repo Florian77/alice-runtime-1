@@ -11,6 +11,7 @@ const {upsertCommandControl} = require("./lib/command-control");
 const {getCommandControl} = require("./lib/command-control");
 const {getDatabase} = require("./lib/database");
 const {createTrigger} = require("./lib/create-trigger");
+const {createDataTrigger} = require("./lib/create-data-trigger");
 const {createCronTrigger} = require("./lib/create-cron-trigger");
 const {storeAppData} = require("./lib/app-data");
 const {loadAppData} = require("./lib/app-data");
@@ -55,10 +56,6 @@ const {
 } = require("./lib/get-data-events");
 
 const {
-    createDataTrigger,
-} = require("./lib/create-data-trigger");
-
-const {
     processNextTrigger,
     processTrigger,
     activateCronTrigger,
@@ -74,9 +71,7 @@ const {
     dispatchEvents,
 } = require("./lib/dispatch-events");
 
-const {
-    loadRuntimeConfig,
-} = require("./lib/load-runtime-config");
+const {loadRuntimeConfig} = require("./lib/load-runtime-config");
 
 const {
     getTriggerCheckForUpdatesCount,
@@ -96,17 +91,9 @@ const {
     getTriggerContextAggregateList,
 } = require("./lib/dashboard-list");
 
-const {
-    getItemTriggerIndex,
-} = require("./lib/get-trigger-events");
-
-const {
-    process,
-} = require("./lib/process");
-
-const {
-    dashboardApi,
-} = require("./lib/dashboard-api");
+const {getItemTriggerIndex} = require("./lib/get-trigger-events");
+const {process} = require("./lib/process");
+const {dashboardApi} = require("./lib/dashboard-api");
 
 const {
     setOneCommandPaused,
@@ -122,18 +109,10 @@ const {
 } = require("./lib/update-command-state");
 
 
-const {
-    getCommand,
-} = require("./lib/get-command");
-
-const {
-    frontendApi,
-} = require("./lib/frontend-api");
-
-const {
-    encrypt,
-    decrypt,
-} = require("./lib/encrypt_decrypt");
+const {getCommand} = require("./lib/get-command");
+const {frontendApi} = require("./lib/frontend-api");
+const {encrypt} = require("./lib/encrypt_decrypt");
+const {decrypt} = require("./lib/encrypt_decrypt");
 
 
 module.exports = {
