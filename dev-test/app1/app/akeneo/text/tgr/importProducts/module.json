@@ -1,0 +1,11 @@
+{
+  "namespace": "app:akeneo:text:tgr:importProducts",
+  "version": "1.0",
+  "context": "akeneo",
+  "aggregate": "text",
+  "trigger": "importProducts",
+  "streamContext": "akeneo",
+  "streamAggregate": "import-products",
+  "streamAggregateId": null,
+  "lastSequenceNumber": -1
+}

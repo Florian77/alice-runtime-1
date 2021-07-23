@@ -1,0 +1,6 @@
+{
+  "namespace": "app:akeneo:text:cmd:makeAggregate",
+  "version": "1.0",
+  "context": "akeneo",
+  "aggregate": "text"
+}

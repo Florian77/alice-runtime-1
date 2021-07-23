@@ -1,0 +1,10 @@
+{
+  "ALICE_RUNTIME": {
+    "STAGE": "db-msg-not-set",
+    "DRIVER": "mongodb",
+    "MONGODB": {
+      "URL": "mongodb://host",
+      "DB": "db-name"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "ALICE_RUNTIME": {
+    "STAGE": "random-stage",
+    "DRIVER": "mongodb",
+    "MONGODB": {
+      "URL": "mongodb://host",
+      "DB": "db-name"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "_id": "akeneo/import-products/sku=401511/0",
+  "streamId": "akeneo/import-products/sku=401511",
+  "sequenceNumber": 0,
+  "context": "akeneo",
+  "aggregate": "import-products",
+  "aggregateId": "sku=401511",
+  "createdAt": "2020-02-05T21:34:44.354+0000",
+  "dispatched": false,
+  "dispatchedAt": null,
+  "payload": {
+    "name": "Stahl Briefkasten",
+    "description": "Dieser pulverbeschichtete Stahlbriefkasten mit seiner klaren Linie.",
+    "shortDescription": "Dieser pulverbeschichtete Stahlbriefkasten .",
+    "shipment": "<ul><li>Briefkasten mit 2 Schlüsseln</li><li>Montagematerial</li></ul>",
+    "technicality": "<ul><li>Totalmaße (BxTxH): ca. 215 x 90 x 320 mm</li><li>Namensfenster (BxH): ca. 75 x 30 mm</li></ul>",
+    "highlight1": "Stahlbriefkasten pulverbeschichtet",
+    "highlight2": "Front mit Namensschild",
+    "highlight3": "Montage mit mehreren Briefkästen zu einer Briefkastenanlage möglich"
+  }
+}

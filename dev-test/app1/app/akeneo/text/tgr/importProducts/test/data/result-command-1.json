@@ -1,0 +1,9 @@
+{
+  "context": "akeneo",
+  "aggregate": "text",
+  "command": "makeAggregate",
+  "invokeId": "sku=401511",
+  "payload": {
+    "aggregateId": "sku=401511"
+  }
+}

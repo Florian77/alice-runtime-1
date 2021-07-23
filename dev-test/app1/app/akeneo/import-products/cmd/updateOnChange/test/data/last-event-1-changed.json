@@ -1,0 +1,25 @@
+{
+  "_id": "akeneo/import-products/updateOnChange/8565bd70-4812-11ea-a8de-a54e7d319765",
+  "context": "akeneo",
+  "aggregate": "import-products",
+  "command": "updateOnChange",
+  "invokeId": "8565bd70-4812-11ea-a8de-a54e7d319765",
+  "multiInvoke": false,
+  "createdAt": "2020-02-05T12:24:57.287+0000",
+  "running": false,
+  "runningSince": "2020-02-05T12:25:05.547+0000",
+  "handled": false,
+  "handledAt": "2020-02-05T12:25:05.565+0000",
+  "payload": {
+    "name": "Stahl Briefkasten --- CHANGE --- ",
+    "description": "Dieser pulverbeschichtete Stahlbriefkasten mit seiner klaren Linie.",
+    "shortDescription": "Dieser pulverbeschichtete Stahlbriefkasten .",
+    "shipment": "<ul><li>Briefkasten mit 2 Schlüsseln</li><li>Montagematerial</li></ul>",
+    "technicality": "<ul><li>Totalmaße (BxTxH): ca. 215 x 90 x 320 mm</li><li>Namensfenster (BxH): ca. 75 x 30 mm</li></ul>",
+    "highlight1": "Stahlbriefkasten pulverbeschichtet",
+    "highlight2": "Front mit Namensschild",
+    "highlight3": "Montage mit mehreren Briefkästen zu einer Briefkastenanlage möglich"
+  },
+  "hasSubscriptions": false,
+  "subscribe": []
+}

@@ -1,0 +1,26 @@
+{
+  "name": "test-dev-helper",
+  "scripts": {
+    "____TEST-CASE____": "echo TEST-CASE",
+    "Clear_DB": "node ../bin/cli clear-db --stage test-case",
+    "Index_DB": "node ../bin/cli index-db --stage test-case",
+    "Process_ALL": "node ../bin/cli process --path ../app --stage test-case",
+    "Process_ALL-2": "node ../bin/cli process --path ../app --stage test-case",
+    "Process_LOOP": "node ../bin/cli process --loop --interval 1 --path ../app --stage test-case",
+    "Process_1_Command": "node ../bin/cli process-commands --max-commands 1 --path ../app --stage test-case",
+    "Process_all_Command": "node ../bin/cli process-commands --path ../app --stage test-case",
+    "Dispatch_1_Event": "node ../bin/cli dispatch-events --max-events 1 --max-runtime 60 --stage test-case",
+    "Dispatch_all_Events": "node ../bin/cli dispatch-events --stage test-case",
+    "Process_1_Trigger": "node ../bin/cli process-trigger --max-trigger 1 --max-trigger-events 1 --path ../app --stage test-case",
+    "Process_all_Trigger": "node ../bin/cli process-trigger --path ../app --stage test-case",
+    "Dashboard_API_SERVER": "node ../bin/cli dashboard-api --port 3010 --path-prefix /dashboard/ --stage test-case",
+    "DC_ON__Process_ALL": "set DEV_CONSOLE_ON=1&& node ../bin/cli process --path ../app --stage test-case",
+    "DC_ON__Process_1_Command": "set DEV_CONSOLE_ON=1&& node ../bin/cli process-commands --max-commands 1 --path ../app --stage test-case",
+    "DC_ON__Dispatch_1_Event": "set DEV_CONSOLE_ON=1&& node ../bin/cli dispatch-events --max-events 1 --max-runtime 60 --stage test-case",
+    "DC_ON__Process_1_Trigger": "set DEV_CONSOLE_ON=1&& node ../bin/cli process-trigger --max-trigger 1 --max-trigger-events 1 --path ../app --stage test-case",
+    "DC_ON__Dashboard_API_SERVER": "set DEV_CONSOLE_ON=1&& node ../bin/cli dashboard-api --port 3010 --path-prefix /dashboard/ --stage test-case",
+    "____UNIT-TEST____": "echo UNIT-TEST",
+    "Dashboard_API_SERVER_ut": "node ../bin/cli dashboard-api --port 3010 --path-prefix /dashboard/ --stage unit-test"
+  },
+  "author": "Florian Tölle"
+}
