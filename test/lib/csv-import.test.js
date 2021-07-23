@@ -53,8 +53,8 @@ describe('lib/csv-import.js', function () {
 
 
         });
-        // log("csvImport() DONE");
-        // logResult("csvImport().result", ftDev.jsonString(result));
+        // dc.l("csvImport() DONE");
+        // logResult("csvImport().result", dc.stringify(result));
         expect(result).to.be.deep.equal([
             {
                 "active": true,
@@ -97,8 +97,8 @@ describe('lib/csv-import.js', function () {
 
 
         });
-        // log("csvImport() DONE");
-        // logResult("csvImport().result", ftDev.jsonString(result));
+        // dc.l("csvImport() DONE");
+        // logResult("csvImport().result", dc.stringify(result));
         expect(result).to.be.deep.equal([
             {
                 "active": true,

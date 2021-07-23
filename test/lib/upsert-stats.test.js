@@ -39,8 +39,8 @@ describe('lib/upsert-stats.js', function () {
             context: "akeneo",
             aggregate: "import-products",
         });
-        //log("upsertStatsContextAggregate() DONE");
-        //logResult("upsertStatsContextAggregate().result", ftDev.jsonString(result));
+        //dc.l("upsertStatsContextAggregate() DONE");
+        //logResult("upsertStatsContextAggregate().result", dc.stringify(result));
         expect(result).to.equal(true);
 
         // TODO -> check result in DB
@@ -53,8 +53,8 @@ describe('lib/upsert-stats.js', function () {
             context: "akeneo",
             aggregate: "import-products",
         });
-        //log("upsertStatsContextAggregate() DONE");
-        //logResult("upsertStatsContextAggregate().result", ftDev.jsonString(result));
+        //dc.l("upsertStatsContextAggregate() DONE");
+        //logResult("upsertStatsContextAggregate().result", dc.stringify(result));
         expect(result).to.equal(true);
 
         // TODO -> check result in DB
@@ -67,8 +67,8 @@ describe('lib/upsert-stats.js', function () {
             context: "akeneo",
             aggregate: "import-products",
         });
-        //log("upsertStatsContextAggregate() DONE");
-        //logResult("upsertStatsContextAggregate().result", ftDev.jsonString(result));
+        //dc.l("upsertStatsContextAggregate() DONE");
+        //logResult("upsertStatsContextAggregate().result", dc.stringify(result));
         expect(result).to.equal(true);
 
         // TODO -> check result in DB

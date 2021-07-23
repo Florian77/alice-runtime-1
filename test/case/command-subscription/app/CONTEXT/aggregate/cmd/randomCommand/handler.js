@@ -27,7 +27,7 @@ const updateOnChange_Command = async (command, env) => {
     else {
         counter = 1;
     }
-    dc.t(counter, "counter");
+    // dc.t(counter, "counter");
 
     // ---------------------------------------------------------------------------------
     // store -> Data
@@ -45,15 +45,15 @@ const updateOnChange_Command = async (command, env) => {
 
 
     let subscription = u.getSubscription(command);
-    dc.j(subscription, "subscription before");
+    // dc.j(subscription, "subscription before");
 
     const returnSubscription = R.propOr(null, "returnSubscription", u.getPayload(command));
-    dc.j(returnSubscription, "returnSubscription");
+    // dc.j(returnSubscription, "returnSubscription");
     if(!R.isNil(returnSubscription)) {
         subscription = returnSubscription;
     }
 
-    dc.j(subscription, "subscription after");
+    // dc.j(subscription, "subscription after");
 
     return u.returnCmdSuccess({
         dataHasChanged: result,

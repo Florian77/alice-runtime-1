@@ -25,8 +25,8 @@ const insertTestData1 = async ({eventCount = 1} = {}) => {
                 name: "Hello World!"
             }
         });
-        // log("insertTestData1().storeDataEvent() [eventCount=%s] DONE", eventCount);
-        // debug("insertTestData1().storeDataEvent().result [eventCount=%s]", eventCount, ftDev.jsonString(result));
+        // dc.l("insertTestData1().storeDataEvent() [eventCount=%s] DONE", eventCount);
+        // dc.l("insertTestData1().storeDataEvent().result [eventCount=%s]", eventCount, dc.stringify(result));
         // expect(result).to.equal(true);
     } while ((eventCount -= 1) > 0);
     return true;
@@ -47,8 +47,8 @@ const insertTestDataIndex1 = async () => {
                 parentSku: "10"
             }
         });
-        // log("insertTestDataIndex1().storeDataEvent() [sku=%s] DONE", sku);
-        // debug("insertTestDataIndex1().storeDataEvent().result [eventCount=%s]", eventCount, ftDev.jsonString(result));
+        // dc.l("insertTestDataIndex1().storeDataEvent() [sku=%s] DONE", sku);
+        // dc.l("insertTestDataIndex1().storeDataEvent().result [eventCount=%s]", eventCount, dc.stringify(result));
         // expect(result).to.equal(true);
     }
     {
@@ -64,7 +64,7 @@ const insertTestDataIndex1 = async () => {
             },
             index: {}
         });
-        // log("insertTestDataIndex1().storeDataEvent() [sku=%s] DONE", sku);
+        // dc.l("insertTestDataIndex1().storeDataEvent() [sku=%s] DONE", sku);
     }
     return true;
 };
@@ -101,8 +101,8 @@ describe('lib/get-data-events.js', function () {
             aggregate: "import-product",
             aggregateId: "sku=203040",
         });
-        // log("getDataEventStream() DONE [result.length=%s]", R.length(result));
-        // logResult("getDataEventStream().result", ftDev.jsonString(result));
+        // dc.l("getDataEventStream() DONE [result.length=%s]", R.length(result));
+        // logResult("getDataEventStream().result", dc.stringify(result));
 
 
         // TODO -> Check result better
@@ -117,8 +117,8 @@ describe('lib/get-data-events.js', function () {
             aggregate: "import-product",
             aggregateId: "sku=203040",
         });
-        // log("getDataEventStream() DONE [result.length=%s]", R.length(result));
-        // logResult("getDataEventStream().result", ftDev.jsonString(result));
+        // dc.l("getDataEventStream() DONE [result.length=%s]", R.length(result));
+        // logResult("getDataEventStream().result", dc.stringify(result));
         expect(result).to.be.an('array');
         expect(result).to.be.empty;
 
@@ -133,8 +133,8 @@ describe('lib/get-data-events.js', function () {
             aggregate: "import-product",
             aggregateId: "sku=203040",
         });
-        // log("getLastDataEvent() DONE");
-        // logResult("getLastDataEvent().result", ftDev.jsonString(result));
+        // dc.l("getLastDataEvent() DONE");
+        // logResult("getLastDataEvent().result", dc.stringify(result));
 
         expect(result).to.have.property("_id", "akeneo/import-product/sku=203040/1");
 
@@ -147,8 +147,8 @@ describe('lib/get-data-events.js', function () {
             aggregate: "import-product",
             aggregateId: "sku=203040",
         });
-        // log("getLastDataEvent() DONE");
-        // logResult("getLastDataEvent().result", ftDev.jsonString(result));
+        // dc.l("getLastDataEvent() DONE");
+        // logResult("getLastDataEvent().result", dc.stringify(result));
         expect(result).to.equal(false);
 
     });
@@ -163,8 +163,8 @@ describe('lib/get-data-events.js', function () {
                 aggregateId: "sku=203040",
                 sequenceNumber: 0
             });
-            // log("getDataEvent() [0] DONE");
-            // logResult("getDataEvent().result [0]", ftDev.jsonString(result));
+            // dc.l("getDataEvent() [0] DONE");
+            // logResult("getDataEvent().result [0]", dc.stringify(result));
 
             expect(result).to.have.property("_id", "akeneo/import-product/sku=203040/0");
         }
@@ -175,8 +175,8 @@ describe('lib/get-data-events.js', function () {
                 aggregateId: "sku=203040",
                 sequenceNumber: 1
             });
-            // log("getDataEvent() [0] DONE");
-            // logResult("getDataEvent().result [0]", ftDev.jsonString(result));
+            // dc.l("getDataEvent() [0] DONE");
+            // logResult("getDataEvent().result [0]", dc.stringify(result));
 
             expect(result).to.have.property("_id", "akeneo/import-product/sku=203040/1");
         }
@@ -190,8 +190,8 @@ describe('lib/get-data-events.js', function () {
             const result = await queryDataIndex({
                 "index.parentSku": "10"
             });
-            // log("queryDataIndex() DONE");
-            // logResult("queryDataIndex().result ", ftDev.jsonString(result));
+            // dc.l("queryDataIndex() DONE");
+            // logResult("queryDataIndex().result ", dc.stringify(result));
 
             expect(R.length(result)).to.be.equal(3);
         }

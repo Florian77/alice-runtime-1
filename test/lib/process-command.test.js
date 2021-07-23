@@ -22,8 +22,8 @@ const insertTestData1 = async () => {
             myData: "important command"
         },
     });
-    //log("insertTestData1().emitCommand() DONE");
-    //debug("insertTestData1().emitCommand().result", jsonString(result));
+    //dc.l("insertTestData1().emitCommand() DONE");
+    //dc.l("insertTestData1().emitCommand().result", dc.stringify(result));
     return true;
 };
 
@@ -38,8 +38,8 @@ const insertTestData2 = async () => {
                 myData: "important command"
             },
         });
-        //log("insertTestData2().emitCommand() [i=%s]", i);
-        //debug("insertTestData2().emitCommand().result [i=%s]", i, jsonString(result));
+        //dc.l("insertTestData2().emitCommand() [i=%s]", i);
+        //dc.l("insertTestData2().emitCommand().result [i=%s]", i, dc.stringify(result));
     }
     return true;
 };
@@ -55,8 +55,8 @@ const insertTestDataError1 = async () => {
             errorMessage: "return my own error msg",
         },
     });
-    //log("insertTestDataError1().emitCommand() DONE");
-    //debug("insertTestDataError1().emitCommand().result", jsonString(result));
+    //dc.l("insertTestDataError1().emitCommand() DONE");
+    //dc.l("insertTestDataError1().emitCommand().result", dc.stringify(result));
     return true;
 };
 
@@ -71,8 +71,8 @@ const insertTestDataError2 = async () => {
             errorMessage: "thrown error",
         },
     });
-    //log("insertTestDataError2().emitCommand() DONE");
-    //debug("insertTestDataError2().emitCommand().result", jsonString(result));
+    //dc.l("insertTestDataError2().emitCommand() DONE");
+    //dc.l("insertTestDataError2().emitCommand().result", dc.stringify(result));
     return true;
 };
 
@@ -200,10 +200,10 @@ describe('lib/process-commands.js', function () {
                 "test-1"
             )
         };
-        //debug("processCommands().input [object]", jsonString(input));
+        //dc.l("processCommands().input [object]", dc.stringify(input));
         const result = await processCommands(input);
-        //log("processCommands() DONE");
-        //logResult("processCommands().result", jsonString(result));
+        //dc.l("processCommands() DONE");
+        //logResult("processCommands().result", dc.stringify(result));
         expect(result).to.be.deep.equal({
             "moreToProcess": false,
             "processedCounter": 2,

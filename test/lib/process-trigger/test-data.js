@@ -14,8 +14,8 @@ const storeDataEvent1 = async (eventCount = 1) => {
         }
     });
     // dc.j(result, "storeDataEvent1().result");
-    //log("storeDataEvent1() [eventCount=%s] DONE", eventCount);
-    //debug("storeDataEvent1().result [eventCount=%s]", eventCount, jsonString(result));
+    //dc.l("storeDataEvent1() [eventCount=%s] DONE", eventCount);
+    //dc.l("storeDataEvent1().result [eventCount=%s]", eventCount, dc.stringify(result));
 };
 
 const insertTestData1 = async ({eventCount = 1} = {}) => {
@@ -31,9 +31,9 @@ const insertTestData1 = async ({eventCount = 1} = {}) => {
             streamContext: "RANDOM-CONTEXT",
             streamAggregate: "random-other-aggregate",
         });
-        //log("insertTestData1().createTrigger() DONE");
-        //debug("insertTestData1().createTrigger().result", jsonString(result));
-        // ftDev.logJsonString(result, "createTrigger().result");
+        //dc.l("insertTestData1().createTrigger() DONE");
+        //dc.l("insertTestData1().createTrigger().result", dc.stringify(result));
+        // dc.j(result, "createTrigger().result");
         // expect(result).to.equal(true);
     }
     return true;
@@ -53,9 +53,9 @@ const insertTestData2 = async ({eventCount = 1} = {}) => {
 
             paused: true,
         });
-        //log("insertTestData2().createTrigger() DONE");
-        //debug("insertTestData2().createTrigger().result", jsonString(result));
-        // ftDev.logJsonString(result, "createTrigger().result");
+        //dc.l("insertTestData2().createTrigger() DONE");
+        //dc.l("insertTestData2().createTrigger().result", dc.stringify(result));
+        // dc.j(result, "createTrigger().result");
         // expect(result).to.equal(true);
     }
     return true;
@@ -71,8 +71,8 @@ const insertTestDataError1 = async () => {
             streamContext: "RANDOM-CONTEXT",
             streamAggregate: "random-other-aggregate",
         });
-        //log("insertTestDataError1().createTrigger() DONE");
-        //debug("insertTestDataError1().createTrigger().result", jsonString(result));
+        //dc.l("insertTestDataError1().createTrigger() DONE");
+        //dc.l("insertTestDataError1().createTrigger().result", dc.stringify(result));
     }
     return true;
 };
@@ -87,8 +87,8 @@ const insertTestDataError2 = async () => {
             streamContext: "RANDOM-CONTEXT",
             streamAggregate: "random-other-aggregate",
         });
-        //log("insertTestDataError2().createTrigger() DONE");
-        //debug("insertTestDataError2().createTrigger().result", jsonString(result));
+        //dc.l("insertTestDataError2().createTrigger() DONE");
+        //dc.l("insertTestDataError2().createTrigger().result", dc.stringify(result));
     }
     return true;
 };

@@ -5,7 +5,7 @@ const alice = require("../../index");
 const clearDatabase = async ({
                                  createIndexAfterClear = false
                              } = {}) => {
-    dc.l("clearDatabase()");
+    // dcl("clearDatabase()");
     const collections = await alice.listCollections({"type": "collection", "name": { $not: /^backup.*/ }}, {nameOnly: true}).toArray();
     await Promise.all(
         collections

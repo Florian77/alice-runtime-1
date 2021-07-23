@@ -27,7 +27,7 @@ const updateOnChange_Command = async (command, env) => {
     else {
         counter = 1;
     }
-    dc.t(counter, "counter");
+    // dc.t(counter, "counter");
 
     // ---------------------------------------------------------------------------------
     // store -> Data

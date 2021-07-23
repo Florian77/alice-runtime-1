@@ -1,21 +1,18 @@
-const ftDev = require("ftws-node-dev-tools");
+const dc = require("node-dev-console");
 const R = require("ramda");
 
 const getCommandId = R.propOr("ERROR-MISSING-DATA", "_id");
 const getEventId = R.propOr("ERROR-MISSING-DATA", "_id");
 
-const _logger = require('debug')('test:cmd:doSomeThing');
-const log = _logger.extend('log');
-const debug = _logger.extend('debug');
 
 
 const doSomeThing = async (command, env) => {
-    log("start processing command [id=%s]", getCommandId(command));
-    debug("command data", ftDev.jsonString(command));
+    dc.l("start processing command [id=%s]", getCommandId(command));
+    dc.l("command data", dc.stringify(command));
 
     if (R.pathEq(["payload", "returnError"], true, command)) {
         const errorMessage = R.pathOr(undefined, ["payload", "errorMessage"], command);
-        log("found returnError [payload.errorMessage=%s]", errorMessage);
+        dc.l("found returnError [payload.errorMessage=%s]", errorMessage);
         return {
             ok: false,
             errorMsg: [
@@ -27,7 +24,7 @@ const doSomeThing = async (command, env) => {
 
     if (R.pathEq(["payload", "throwError"], true, command)) {
         const errorMessage = R.pathOr(undefined, ["payload", "errorMessage"], command);
-        log("found throwError [payload.errorMessage=%s]", errorMessage);
+        dc.l("found throwError [payload.errorMessage=%s]", errorMessage);
         throw Error(errorMessage);
     }
 
@@ -40,10 +37,10 @@ const doSomeThing = async (command, env) => {
             superData: "YEAH!!!"
         }
     };
-    debug("newEvent [object]", ftDev.jsonString(newEvent));
+    dc.l("newEvent [object]", dc.stringify(newEvent));
     const result = await env.storeDataEvent(newEvent);
-    log("data event stored [id=%s]", getEventId(result));
-    debug("storeDataEvent().result [object]", ftDev.jsonString(result));
+    dc.l("data event stored [id=%s]", getEventId(result));
+    dc.l("storeDataEvent().result [object]", dc.stringify(result));
 
     const returnState = {
         ok: true,
@@ -51,7 +48,7 @@ const doSomeThing = async (command, env) => {
             "newSubscription"
         ]
     };
-    debug("returnState [object]", ftDev.jsonString(returnState));
+    dc.l("returnState [object]", dc.stringify(returnState));
     return returnState;
 };
 

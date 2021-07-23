@@ -1,18 +1,15 @@
-const ftDev = require("ftws-node-dev-tools");
+const dc = require("node-dev-console");
 const R = require("ramda");
 
 const getCommandId = R.propOr("ERROR-MISSING-DATA", "_id");
 const getEventId = R.propOr("ERROR-MISSING-DATA", "_id");
 
-const _logger = require('debug')('test:trigger:emptyTrigger');
-const log = _logger.extend('log');
-const debug = _logger.extend('debug');
 
 
 
 const emptyTrigger = async (event, env) => {
-    log("start processing event [id=%s]", getEventId(event));
-    debug("event data", ftDev.jsonString(event));
+    dc.l("start processing event [id=%s]", getEventId(event));
+    dc.l("event data", dc.stringify(event));
 
 
     return true;

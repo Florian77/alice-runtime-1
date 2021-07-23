@@ -103,7 +103,7 @@ dc.l("[cwd=%s]", cwd);
             cwd,
             path
         );
-        dc.l("[functionPath=%s]", functionPath);
+        // dc.l("[functionPath=%s]", functionPath);
 
         // ---------------------------------------------------------------------------------
         if (command === "index-db") {
@@ -131,7 +131,7 @@ dc.l("[cwd=%s]", cwd);
                     maxProcessCommands,
                     maxRuntime,
                 });
-                dc.l(".process().result:", dc.stringify(result));
+                // dc.l(".process().result:", dc.stringify(result));
 
                 if(loop) {
                     console.log(`process again after ${interval} second(s)`);
@@ -149,7 +149,7 @@ dc.l("[cwd=%s]", cwd);
                 maxProcessCommands,
                 maxRuntime,
             });
-            dc.l(".processCommands().result:", dc.stringify(result));
+            // dc.l(".processCommands().result:", dc.stringify(result));
         }
 
         // ---------------------------------------------------------------------------------
@@ -160,7 +160,7 @@ dc.l("[cwd=%s]", cwd);
                 maxProcessEvents,
                 maxRuntime,
             });
-            dc.l(".processTrigger().result:", dc.stringify(result));
+            // dc.l(".processTrigger().result:", dc.stringify(result));
         }
 
         // ---------------------------------------------------------------------------------
@@ -169,7 +169,7 @@ dc.l("[cwd=%s]", cwd);
                 maxDispatchEvents,
                 maxRuntime,
             });
-            dc.l(".dispatchEvents().result:", dc.stringify(result));
+            // dc.l(".dispatchEvents().result:", dc.stringify(result));
         }
 
         // ---------------------------------------------------------------------------------

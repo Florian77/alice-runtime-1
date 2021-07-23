@@ -25,8 +25,8 @@ const insertTestData1 = async () => {
             streamAggregate: "product",
             streamAggregateId: "sku=203040",
         });
-        // log("insertTestData1().createDataTrigger() DONE");
-        // debug("insertTestData1().createDataTrigger().result", ftDev.jsonString(result));
+        // dc.l("insertTestData1().createDataTrigger() DONE");
+        // dc.l("insertTestData1().createDataTrigger().result", dc.stringify(result));
     }
     {
 
@@ -37,8 +37,8 @@ const insertTestData1 = async () => {
             streamContext: "akeneo",
             streamAggregate: "product",
         });
-        // log("insertTestData1().createDataTrigger() DONE");
-        // debug("insertTestData1().createDataTrigger().result", ftDev.jsonString(result));
+        // dc.l("insertTestData1().createDataTrigger() DONE");
+        // dc.l("insertTestData1().createDataTrigger().result", dc.stringify(result));
     }
     {
 
@@ -48,8 +48,8 @@ const insertTestData1 = async () => {
             trigger: "emptyTrigger",
             streamContext: "akeneo",
         });
-        // log("insertTestData1().createDataTrigger() DONE");
-        // debug("insertTestData1().createDataTrigger().result", ftDev.jsonString(result));
+        // dc.l("insertTestData1().createDataTrigger() DONE");
+        // dc.l("insertTestData1().createDataTrigger().result", dc.stringify(result));
     }
     {
         const result = await processTrigger({
@@ -59,8 +59,8 @@ const insertTestData1 = async () => {
                 "test-data-1"
             )
         });
-        // log("insertTestData1().processTrigger() DONE");
-        // debug("insertTestData1().processTrigger().result ", ftDev.jsonString(result));
+        // dc.l("insertTestData1().processTrigger() DONE");
+        // dc.l("insertTestData1().processTrigger().result ", dc.stringify(result));
     }
     {
         const result = await storeDataEvent({
@@ -71,8 +71,8 @@ const insertTestData1 = async () => {
                 myData: "important command"
             },
         });
-        // log("insertTestData1().storeDataEvent() DONE");
-        // debug("insertTestData1().storeDataEvent().result", ftDev.jsonString(result));
+        // dc.l("insertTestData1().storeDataEvent() DONE");
+        // dc.l("insertTestData1().storeDataEvent().result", dc.stringify(result));
     }
     return true;
 };
@@ -104,8 +104,8 @@ describe('lib/dispatch-events.js', function () {
         await insertTestData1();
 
         const result = await dispatchNextEvent();
-        // log("dispatchNextEvent() DONE");
-        // logResult("dispatchNextEvent().result", ftDev.jsonString(result));
+        // dc.l("dispatchNextEvent() DONE");
+        // logResult("dispatchNextEvent().result", dc.stringify(result));
 
         expect(result).to.equal(true);
 
@@ -118,8 +118,8 @@ describe('lib/dispatch-events.js', function () {
         const result = await dispatchEvents({
             maxDispatchEvents: 1
         });
-        // log("dispatchEvents() [1] DONE");
-        // logResult("dispatchEvents().result [1]", ftDev.jsonString(result));
+        // dc.l("dispatchEvents() [1] DONE");
+        // logResult("dispatchEvents().result [1]", dc.stringify(result));
 
         expect(result).to.be.deep.equal({
             "moreToProcess": true,
@@ -137,8 +137,8 @@ describe('lib/dispatch-events.js', function () {
         const result = await dispatchEvents({
             maxDispatchEvents: 10
         });
-        // log("dispatchEvents() DONE [2]");
-        // logResult("dispatchEvents().result [2]", ftDev.jsonString(result));
+        // dc.l("dispatchEvents() DONE [2]");
+        // logResult("dispatchEvents().result [2]", dc.stringify(result));
 
         expect(result).to.be.deep.equal({
             "moreToProcess": false,

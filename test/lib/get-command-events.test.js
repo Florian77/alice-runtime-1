@@ -21,8 +21,8 @@ const insertTestData1 = async () => {
             myData: "important command"
         },
     });
-    // log("insertTestData1().emitCommand() DONE");
-    // debug("insertTestData1().emitCommand().result", jsonString(result));
+    // dc.l("insertTestData1().emitCommand() DONE");
+    // dc.l("insertTestData1().emitCommand().result", dc.stringify(result));
     return result;
 };
 
@@ -54,8 +54,8 @@ describe('lib/get-command-events.js', function () {
         const testDataResult = await insertTestData1();
         {
             const result = await getCommand({commandId: testDataResult._id});
-            // log("getDataEvent() [0] DONE");
-            // logResult("getDataEvent().result [0]", ftDev.jsonString(result));
+            // dc.l("getDataEvent() [0] DONE");
+            // logResult("getDataEvent().result [0]", dc.stringify(result));
 
             expect(result).to.be.deep.equal(testDataResult);
             // TODO -> Test Result
@@ -70,8 +70,8 @@ describe('lib/get-command-events.js', function () {
         const testDataResult = await insertTestData1();
         {
             const result = await getItemCommandIndex(testDataResult._id);
-            // log("getDataEvent() [0] DONE");
-            // logResult("getDataEvent().result [0]", ftDev.jsonString(result));
+            // dc.l("getDataEvent() [0] DONE");
+            // logResult("getDataEvent().result [0]", dc.stringify(result));
 
             expect(result).to.be.deep.equal(testDataResult);
             // TODO -> Test Result

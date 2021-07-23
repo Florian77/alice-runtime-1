@@ -22,7 +22,7 @@ const insertTestData1 = async () => {
 
         lastSequenceNumber: -1,
     });
-    // debug("createDataTrigger().result", ftDev.jsonString(result));
+    // dc.l("createDataTrigger().result", dc.stringify(result));
     return result;
 };
 
@@ -54,8 +54,8 @@ describe('lib/get-trigger-events.js', function () {
         const testDataResult = await insertTestData1();
         {
             const result = await getItemTriggerIndex(testDataResult._id);
-            // log("getDataEvent() [0] DONE");
-            // logResult("getDataEvent().result [0]", ftDev.jsonString(result));
+            // dc.l("getDataEvent() [0] DONE");
+            // logResult("getDataEvent().result [0]", dc.stringify(result));
 
             expect(result).to.be.deep.equal(testDataResult);
             // TODO -> Test Result

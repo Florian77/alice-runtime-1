@@ -115,7 +115,7 @@ describe('lib/emit-command.js', function () {
             });
             dc.j(result, "TEST result");
             // dc.l(("emitMultiCommand() [1] DONE");
-            // console.log("emitMultiCommand().result [1] ", dc.stringify(result));
+            // console.dc.l("emitMultiCommand().result [1] ", dc.stringify(result));
         }
         {
             const result = await emitMultiCommand({
@@ -129,7 +129,7 @@ describe('lib/emit-command.js', function () {
             });
             dc.j(result, "TEST result");
             // dc.l(("emitMultiCommand() [2] DONE");
-            // console.log("emitMultiCommand().result [2]", dc.stringify(result));
+            // console.dc.l("emitMultiCommand().result [2]", dc.stringify(result));
         }
         // TODO -> Check result
         // expect(result).to.equal(true);
@@ -160,7 +160,7 @@ describe('lib/emit-command.js', function () {
             });
             dc.j(result, "TEST result");
             // dc.l(("emitMultiCommand() [1] DONE");
-            // console.log("emitMultiCommand().result [1] ", dc.stringify(result));
+            // console.dc.l("emitMultiCommand().result [1] ", dc.stringify(result));
         }
         // TODO -> Check result
         // expect(result).to.equal(true);
@@ -181,7 +181,7 @@ describe('lib/emit-command.js', function () {
             });
             dc.j(result, "TEST result");
             // dc.l(("emitMultiCommand() [1] DONE");
-            // console.log("emitMultiCommand().result [1] ", dc.stringify(result));
+            // console.dc.l("emitMultiCommand().result [1] ", dc.stringify(result));
         }
         {
             const result = await emitMultiCommand({
@@ -196,7 +196,7 @@ describe('lib/emit-command.js', function () {
             });
             dc.j(result, "TEST result");
             // dc.l(("emitMultiCommand() [2] DONE");
-            // console.log("emitMultiCommand().result [2] ", dc.stringify(result));
+            // console.dc.l("emitMultiCommand().result [2] ", dc.stringify(result));
         }
         // TODO -> Check result
         // expect(result).to.equal(true);

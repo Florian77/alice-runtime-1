@@ -88,8 +88,8 @@ describe('lib/store-data-event.js', function () {
                     }
                 }
             });
-            //log("storeDataEvent() [1] [sku=203040] DONE");
-            //logResult("storeDataEvent().result [1] [sku=203040]", ftDev.jsonString(result));
+            //dc.l("storeDataEvent() [1] [sku=203040] DONE");
+            //logResult("storeDataEvent().result [1] [sku=203040]", dc.stringify(result));
 
             // TODO -> Check result
             // expect(result).to.equal(true);
@@ -108,8 +108,8 @@ describe('lib/store-data-event.js', function () {
                     }
                 }
             });
-            //log("storeDataEvent() [2] [sku=203040] DONE");
-            //logResult("storeDataEvent().result [2] [sku=203040]", ftDev.jsonString(result));
+            //dc.l("storeDataEvent() [2] [sku=203040] DONE");
+            //logResult("storeDataEvent().result [2] [sku=203040]", dc.stringify(result));
 
             // TODO -> Check result
             // expect(result).to.equal(true);
@@ -128,8 +128,8 @@ describe('lib/store-data-event.js', function () {
                     }
                 }
             });
-            //log("storeDataEvent() [color=12] DONE");
-            //logResult("storeDataEvent().result [color=12]", ftDev.jsonString(result));
+            //dc.l("storeDataEvent() [color=12] DONE");
+            //logResult("storeDataEvent().result [color=12]", dc.stringify(result));
 
             // TODO -> Check result
             // expect(result).to.equal(true);
@@ -149,8 +149,8 @@ describe('lib/store-data-event.js', function () {
         };
         {
             const result = await storeDataEventOnPayloadChange(event);
-            //log("storeDataEventOnPayloadChange() DONE");
-            //logResult("storeDataEventOnPayloadChange().result", ftDev.jsonString(result));
+            //dc.l("storeDataEventOnPayloadChange() DONE");
+            //logResult("storeDataEventOnPayloadChange().result", dc.stringify(result));
             expect(result).to.equal(true);
         }
 
@@ -170,14 +170,14 @@ describe('lib/store-data-event.js', function () {
         };
         {
             const result = await storeDataEvent(event);
-            //log("storeDataEvent() DONE");
-            //logResult("storeDataEvent().result", ftDev.jsonString(result));
+            //dc.l("storeDataEvent() DONE");
+            //logResult("storeDataEvent().result", dc.stringify(result));
             // expect(result).to.equal(true);
         }
         {
             const result = await storeDataEventOnPayloadChange(event);
-            //log("storeDataEventOnPayloadChange() DONE");
-            //logResult("storeDataEventOnPayloadChange().result", ftDev.jsonString(result));
+            //dc.l("storeDataEventOnPayloadChange() DONE");
+            //logResult("storeDataEventOnPayloadChange().result", dc.stringify(result));
             expect(result).to.equal(false);
         }
 
@@ -197,8 +197,8 @@ describe('lib/store-data-event.js', function () {
         };
         {
             const result = await storeDataEvent(event);
-            //log("storeDataEvent() DONE");
-            //logResult("storeDataEvent().result", ftDev.jsonString(result));
+            //dc.l("storeDataEvent() DONE");
+            //logResult("storeDataEvent().result", dc.stringify(result));
             // expect(result).to.equal(true);
         }
         {
@@ -208,8 +208,8 @@ describe('lib/store-data-event.js', function () {
                     name: "Hello NEW World!"
                 }
             });
-            //log("storeDataEventOnPayloadChange() DONE");
-            //logResult("storeDataEventOnPayloadChange().result", ftDev.jsonString(result));
+            //dc.l("storeDataEventOnPayloadChange() DONE");
+            //logResult("storeDataEventOnPayloadChange().result", dc.stringify(result));
             expect(result).to.equal(true);
         }
 
@@ -230,8 +230,8 @@ describe('lib/store-data-event.js', function () {
         };
         {
             const result = await storeDataEvent(event);
-            //log("storeDataEvent() DONE");
-            //logResult("storeDataEvent().result", ftDev.jsonString(result));
+            //dc.l("storeDataEvent() DONE");
+            //logResult("storeDataEvent().result", dc.stringify(result));
         }
         {
             const result = await storeDataEventOnPayloadChange({
@@ -241,8 +241,8 @@ describe('lib/store-data-event.js', function () {
                 },
                 version: "2",
             });
-            //log("storeDataEventOnPayloadChange() DONE");
-            //logResult("storeDataEventOnPayloadChange().result", ftDev.jsonString(result));
+            //dc.l("storeDataEventOnPayloadChange() DONE");
+            //logResult("storeDataEventOnPayloadChange().result", dc.stringify(result));
             expect(result).to.equal(true);
         }
     });
