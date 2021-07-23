@@ -34,13 +34,10 @@ const {
     getCollectionView,
     getCollectionBackup,
     getCollectionCommandPrivate,
-
-    makeUtilityCollectionId,
 } = require("./lib/database");
-
+const {makeUtilityCollectionId} = require("./lib/helper/make-utility-collection-id")
 const {nextSequenceNumber_dataStream} = require("./lib/next-sequence-number")
 const {nextSequenceNumber_dataIndex} = require("./lib/next-sequence-number")
-
 const {checkIndexes} = require("./lib/database-indexes");
 const {storeDataEvent} = require("./lib/store-data-event");
 const {storeDataEventOnPayloadChange} = require("./lib/store-data-event-on-payload-change");
