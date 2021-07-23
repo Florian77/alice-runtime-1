@@ -110,10 +110,6 @@ const {
 } = require("./lib/get-trigger-events");
 
 const {
-    csvImport,
-} = require("./lib/csv-import");
-
-const {
     process,
 } = require("./lib/process");
 
@@ -247,9 +243,6 @@ module.exports = {
 
     // get-trigger-events
     getItemTriggerIndex,
-
-    // csv-import
-    csvImport,
 
     // process
     process,

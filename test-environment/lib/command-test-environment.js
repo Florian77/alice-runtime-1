@@ -112,11 +112,6 @@ const commandTestEnvironment = (command = {
         queryDataIndexResult: () => getByCallType("queryDataIndexResult"),
 
         /** @return {Array} */
-        csvImport: () => getByCallType("csvImport"),
-        /** @return {Array} */
-        csvImportResult: () => getByCallType("csvImportResult"),
-
-        /** @return {Array} */
         storeAppData: () => getByCallType("storeAppData"),
         /** @return {Array} */
         storeAppDataResult: () => getByCallType("storeAppDataResult"),
@@ -283,13 +278,6 @@ const commandTestEnvironment = (command = {
             add("queryDataIndex", {query, options});
             const result = await alice.queryDataIndex(query, options);
             add("queryDataIndexResult", result);
-            return result;
-        },
-
-        csvImport: async (query, options) => {
-            add("csvImport", {query, options});
-            const result = await alice.csvImport(query, options);
-            add("csvImportResult", result);
             return result;
         },
 

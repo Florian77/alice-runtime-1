@@ -63,7 +63,7 @@ describe('test case command callback', function () {
             ]);
             dc.j(result, "emitCommand() result");
         }
-        await alice.processNextCommand({functionPath});
+        await alice.processNextCommand({functionPath, });
         dc.l("--------------");
 
     });
