@@ -169,10 +169,6 @@ const triggerTestEnvironment = ({
         emitCommand,
         emitMultiCommand,
         reInvokeSubscription,
-        /** @deprecated */
-        callLogEmitCommand: log.emitCommand,
-        /** @deprecated */
-        callLogEmitMultiCommand: log.emitMultiCommand,
 
 
         storeAppData: async (key, data) => {

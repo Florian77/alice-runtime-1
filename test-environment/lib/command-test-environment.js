@@ -151,8 +151,6 @@ const commandTestEnvironment = (command = {
             add("storeDataEventResult", result);
             return result;
         },
-        /** @deprecated */
-        callLogStoreDataEvent: log.storeDataEvent, // deprecated
 
         storeDataEventOnPayloadChange: async input => {
             add("storeDataEventOnPayloadChange", input);
@@ -160,8 +158,6 @@ const commandTestEnvironment = (command = {
             add("storeDataEventOnPayloadChangeResult", result);
             return result;
         },
-        /** @deprecated */
-        callLogStoreDataEventOnPayloadChange: log.storeDataEventOnPayloadChange, // deprecated
 
         emitCommand: async input => {
             add("emitCommand", input);
@@ -169,8 +165,6 @@ const commandTestEnvironment = (command = {
             add("emitCommandResult", result);
             return result;
         },
-        /** @deprecated */
-        callLogEmitCommand: log.emitCommand,
 
         emitMultiCommand: async input => {
             add("emitMultiCommand", input);
@@ -178,8 +172,6 @@ const commandTestEnvironment = (command = {
             add("emitMultiCommandResult", result);
             return result;
         },
-        /** @deprecated */
-        callLogEmitMultiCommand: log.emitMultiCommand, // deprecated
 
         getDataEventStream: async input => {
             add("getDataEventStream", input);
@@ -194,8 +186,6 @@ const commandTestEnvironment = (command = {
             add("getLastDataEventResult", result);
             return result;
         },
-        /** @deprecated */
-        callLogGetLastDataEvent: log.getLastDataEvent, // deprecated
 
         getDataEvent: async input => {
             add("getDataEvent", input);
@@ -295,8 +285,6 @@ const commandTestEnvironment = (command = {
             add("queryDataIndexResult", result);
             return result;
         },
-        /** @deprecated */
-        callLogQueryDataIndex: log.queryDataIndex, // deprecated
 
         csvImport: async (query, options) => {
             add("csvImport", {query, options});
