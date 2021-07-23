@@ -38,8 +38,8 @@ const {
     makeUtilityCollectionId,
 } = require("./lib/database");
 
-const {getNextDataStreamSequenceNumber} = require("./lib/next-sequence-number")
-const {getNextDataIndexSequenceNumber} = require("./lib/next-sequence-number")
+const {nextSequenceNumber_dataStream} = require("./lib/next-sequence-number")
+const {nextSequenceNumber_dataIndex} = require("./lib/next-sequence-number")
 
 const {checkIndexes} = require("./lib/database-indexes");
 const {storeDataEvent} = require("./lib/store-data-event");
@@ -165,8 +165,8 @@ module.exports = {
 
     makeUtilityCollectionId,
 
-    getNextDataStreamSequenceNumber,
-    getNextDataIndexSequenceNumber,
+    nextSequenceNumber_dataStream,
+    nextSequenceNumber_dataIndex,
 
     // database-indexes
     checkIndexes,
