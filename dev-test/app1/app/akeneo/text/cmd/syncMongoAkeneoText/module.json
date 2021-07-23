@@ -1,6 +1,0 @@
-{
-  "namespace": "app:akeneo:text:cmd:syncMongoAkeneoText",
-  "version": "1.0",
-  "context": "akeneo",
-  "aggregate": "text"
-}

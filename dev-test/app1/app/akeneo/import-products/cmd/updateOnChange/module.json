@@ -1,6 +1,0 @@
-{
-  "namespace": "app:akeneo:importProducts:cmd:updateOnChange",
-  "version": "1.0",
-  "context": "akeneo",
-  "aggregate": "import-products"
-}

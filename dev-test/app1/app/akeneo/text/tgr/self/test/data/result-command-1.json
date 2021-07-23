@@ -1,9 +1,0 @@
-{
-  "context": "akeneo",
-  "aggregate": "text",
-  "command": "syncMongoAkeneoText",
-  "invokeId": "sku=401511",
-  "payload": {
-    "aggregateId": "sku=401511"
-  }
-}
