@@ -1,17 +1,19 @@
-const {
-    DataCluster,
-} = require("./lib/data-cluster");
-
+const {DataCluster} = require("./lib/data-cluster");
 const utility = require("./lib/utility");
 const entity = require("./lib/entity");
+const {makeCommandId} = require("./lib/helper/make-command-id");
+const {updateManyCommands} = require("./lib/update-many-commands");
+const {updateOneCommand} = require("./lib/update-one-command");
+const {reInvokeSubscription} = require("./lib/re-invoke-subscription");
+const {emitCommand} = require("./lib/emit-command");
+const {emitMultiCommand} = require("./lib/emit-multi-command");
+const {upsertCommandControl} = require("./lib/command-control");
+const {getCommandControl} = require("./lib/command-control");
 const {getDatabase} = require("./lib/database");
 const {createTrigger} = require("./lib/create-trigger");
 const {createCronTrigger} = require("./lib/create-cron-trigger");
-const {
-    storeAppData,
-    loadAppData,
-} = require("./lib/app-data");
-
+const {storeAppData} = require("./lib/app-data");
+const {loadAppData} = require("./lib/app-data");
 const {
     connect,
     disconnect,
@@ -42,9 +44,7 @@ const {
     // UTILITY_NAMESPACE,
 } = require("./lib/database");
 
-const {
-    checkIndexes,
-} = require("./lib/database-indexes");
+const {checkIndexes} = require("./lib/database-indexes");
 
 const {
     storeDataEvent,
@@ -128,22 +128,12 @@ const {
     setManyCommandsNotPaused,
     setManyCommandsHandled,
     setManyCommandsNotHandled,
-} = require("./lib/command-control");
+} = require("./lib/update-command-state");
 
-const {
-    makeCommandId,
-    emitCommand,
-    emitMultiCommand,
-    updateOneCommand,
-    updateManyCommands,
-    getCommandControl,
-    upsertCommandControl,
-    reInvokeSubscription,
-} = require("./lib/emit-command");
 
 const {
     getCommand,
-} = require("./lib/get-command-events");
+} = require("./lib/get-command");
 
 const {
     frontendApi,
@@ -154,9 +144,7 @@ const {
     decrypt,
 } = require("./lib/encrypt_decrypt");
 
-// ----------------------------------------------------------
-//  Module Export
-// ----------------------------------------------------------
+
 module.exports = {
 
     // database
@@ -250,6 +238,10 @@ module.exports = {
     //dashboard-api
     dashboardApi,
 
+    updateOneCommand,
+    updateManyCommands,
+    reInvokeSubscription,
+
     // command-control
     setOneCommandPaused,
     setOneCommandNotPaused,
@@ -266,11 +258,10 @@ module.exports = {
     makeCommandId,
     emitCommand,
     emitMultiCommand,
-    updateOneCommand,
-    updateManyCommands,
+
+    // command-control
     getCommandControl,
     upsertCommandControl,
-    reInvokeSubscription,
 
     // get-command-events
     getCommand,

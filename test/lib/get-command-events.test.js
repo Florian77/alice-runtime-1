@@ -1,7 +1,6 @@
 const expect = require('chai').expect;
 const dc = require("node-dev-console");
 const aliceTestEnv = require("../../test-environment");
-const {getItemCommandIndex} = require("../../lib/get-command-events");
 const {
     emitCommand,
     getCommand
@@ -54,22 +53,6 @@ describe('lib/get-command-events.js', function () {
         const testDataResult = await insertTestData1();
         {
             const result = await getCommand({commandId: testDataResult._id});
-            // dc.l("getDataEvent() [0] DONE");
-            // logResult("getDataEvent().result [0]", dc.stringify(result));
-
-            expect(result).to.be.deep.equal(testDataResult);
-            // TODO -> Test Result
-            // expect(result).to.have.property("_id", "akeneo/import-product/sku=203040/0");
-        }
-
-    });
-
-    // -----------------------------------------------------------------------------------------------------------------------------
-    it('getItemCommandIndex happy path', async function () {
-
-        const testDataResult = await insertTestData1();
-        {
-            const result = await getItemCommandIndex(testDataResult._id);
             // dc.l("getDataEvent() [0] DONE");
             // logResult("getDataEvent().result [0]", dc.stringify(result));
 
