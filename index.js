@@ -36,13 +36,10 @@ const {
     getCollectionCommandPrivate,
 
     makeUtilityCollectionId,
-
-    getNextDataStreamSequenceNumber,
-    getNextDataIndexSequenceNumber,
-
-    // COLLECTION_LIST,
-    // UTILITY_NAMESPACE,
 } = require("./lib/database");
+
+const {getNextDataStreamSequenceNumber} = require("./lib/next-sequence-number")
+const {getNextDataIndexSequenceNumber} = require("./lib/next-sequence-number")
 
 const {checkIndexes} = require("./lib/database-indexes");
 const {storeDataEvent} = require("./lib/store-data-event");
