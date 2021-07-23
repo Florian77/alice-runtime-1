@@ -45,11 +45,8 @@ const {
 } = require("./lib/database");
 
 const {checkIndexes} = require("./lib/database-indexes");
-
-const {
-    storeDataEvent,
-    storeDataEventOnPayloadChange,
-} = require("./lib/store-data-event");
+const {storeDataEvent} = require("./lib/store-data-event");
+const {storeDataEventOnPayloadChange} = require("./lib/store-data-event-on-payload-change");
 
 const {
     getDataEventStream,
