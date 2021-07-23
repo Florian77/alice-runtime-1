@@ -1,6 +1,8 @@
 {
   "name": "test-dev-helper",
   "scripts": {
+    "____UNIT-TEST____": "echo UNIT-TEST",
+    "Dashboard_API_SERVER_ut": "node ../bin/cli dashboard-api --port 3010 --path-prefix /dashboard/ --stage unit-test",
     "____TEST-CASE____": "echo TEST-CASE",
     "Clear_DB": "node ../bin/cli clear-db --stage test-case",
     "Index_DB": "node ../bin/cli index-db --stage test-case",
@@ -18,9 +20,7 @@
     "DC_ON__Process_1_Command": "set DEV_CONSOLE_ON=1&& node ../bin/cli process-commands --max-commands 1 --path ../app --stage test-case",
     "DC_ON__Dispatch_1_Event": "set DEV_CONSOLE_ON=1&& node ../bin/cli dispatch-events --max-events 1 --max-runtime 60 --stage test-case",
     "DC_ON__Process_1_Trigger": "set DEV_CONSOLE_ON=1&& node ../bin/cli process-trigger --max-trigger 1 --max-trigger-events 1 --path ../app --stage test-case",
-    "DC_ON__Dashboard_API_SERVER": "set DEV_CONSOLE_ON=1&& node ../bin/cli dashboard-api --port 3010 --path-prefix /dashboard/ --stage test-case",
-    "____UNIT-TEST____": "echo UNIT-TEST",
-    "Dashboard_API_SERVER_ut": "node ../bin/cli dashboard-api --port 3010 --path-prefix /dashboard/ --stage unit-test"
+    "DC_ON__Dashboard_API_SERVER": "set DEV_CONSOLE_ON=1&& node ../bin/cli dashboard-api --port 3010 --path-prefix /dashboard/ --stage test-case"
   },
   "author": "Florian Tölle"
 }
