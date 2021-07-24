@@ -44,16 +44,15 @@ const {storeDataEvent} = require("./lib/store-data-event");
 const {storeDataEventOnPayloadChange} = require("./lib/store-data-event-on-payload-change");
 
 const {
-    getDataEventStream,
-    getLastDataEvent,
     getDataEvent,
-    isEventLink,
     loadLinkedDataEvent,
     resolveEvent,
-    getItemDataIndex,
-    queryDataIndex,
-    countDataIndex,
-} = require("./lib/get-data-events");
+} = require("./lib/get-data-event");
+const {getDataEventStream} = require("./lib/get-data-event-stream");
+const {getLastDataEvent} = require("./lib/get-last-data-event");
+const {queryDataIndex} = require("./lib/query-data-index");
+const {countDataIndex} = require("./lib/count-data-index");
+const {getItemDataIndex} = require("./lib/get-data-index");
 
 const {
     processNextTrigger,
@@ -108,7 +107,6 @@ const {
     setManyCommandsNotHandled,
 } = require("./lib/update-command-state");
 
-
 const {getCommand} = require("./lib/get-command");
 const {frontendApi} = require("./lib/frontend-api");
 const {encrypt} = require("./lib/encrypt_decrypt");
@@ -144,18 +142,17 @@ module.exports = {
     nextSequenceNumber_dataStream,
     nextSequenceNumber_dataIndex,
 
-    // database-indexes
+    // database indexes
     checkIndexes,
 
-    // store-data-event
+    // store data events
     storeDataEvent,
     storeDataEventOnPayloadChange,
 
-    // get-data-events
+    // load data events
     getDataEventStream,
     getLastDataEvent,
     getDataEvent,
-    isEventLink,
     loadLinkedDataEvent,
     resolveEvent,
     getItemDataIndex,
@@ -180,7 +177,6 @@ module.exports = {
     dispatchNextEvent,
     dispatchEvents,
 
-    // load-runtime-config
     loadRuntimeConfig,
 
     // dashboard-stats
@@ -202,10 +198,8 @@ module.exports = {
     // get-trigger-events
     getItemTriggerIndex,
 
-    // process
     process,
 
-    //dashboard-api
     dashboardApi,
 
     updateOneCommand,
@@ -232,11 +226,7 @@ module.exports = {
     // command-control
     getCommandControl,
     upsertCommandControl,
-
-    // get-command-events
     getCommand,
-
-    // frontend API
     frontendApi,
 
     // App Data
