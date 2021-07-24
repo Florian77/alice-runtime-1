@@ -52,7 +52,7 @@ const {getDataEventStream} = require("./lib/get-data-event-stream");
 const {getLastDataEvent} = require("./lib/get-last-data-event");
 const {queryDataIndex} = require("./lib/query-data-index");
 const {countDataIndex} = require("./lib/count-data-index");
-const {getItemDataIndex} = require("./lib/get-data-index");
+const {getDataIndex} = require("./lib/get-data-index");
 
 const {
     processNextTrigger,
@@ -158,7 +158,7 @@ module.exports = {
     getDataEvent,
     loadLinkedDataEvent,
     resolveEvent,
-    getItemDataIndex,
+    getDataIndex,
     queryDataIndex,
     countDataIndex,
 
