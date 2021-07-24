@@ -112,8 +112,8 @@ const {
 
 const {getCommand} = require("./lib/get-command");
 const {frontendApi} = require("./lib/frontend-api");
-const {encrypt} = require("./lib/encrypt_decrypt");
-const {decrypt} = require("./lib/encrypt_decrypt");
+const {encrypt} = require("./lib/encrypt");
+const {decrypt} = require("./lib/decrypt");
 
 
 module.exports = {
