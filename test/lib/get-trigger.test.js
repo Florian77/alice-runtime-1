@@ -3,7 +3,7 @@ const dc = require("node-dev-console");
 const aliceTestEnv = require("../../test-environment");
 const {
     createDataTrigger,
-    getItemTriggerIndex
+    getTrigger
 } = require("../../index");
 
 
@@ -53,7 +53,7 @@ describe('lib/get-trigger-events.js', function () {
 
         const testDataResult = await insertTestData1();
         {
-            const result = await getItemTriggerIndex(testDataResult._id);
+            const result = await getTrigger({triggerId: testDataResult._id});
             // dc.l("getDataEvent() [0] DONE");
             // logResult("getDataEvent().result [0]", dc.stringify(result));
 

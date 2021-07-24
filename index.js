@@ -93,7 +93,7 @@ const {
     getTriggerContextAggregateList,
 } = require("./lib/upsert-stats");
 
-const {getItemTriggerIndex} = require("./lib/get-trigger-events");
+const {getTrigger} = require("./lib/get-trigger");
 const {process} = require("./lib/process");
 const {dashboardApi} = require("./lib/dashboard-api");
 
@@ -199,7 +199,7 @@ module.exports = {
     getTriggerContextAggregateList,
 
     // get-trigger-events
-    getItemTriggerIndex,
+    getTrigger,
 
     process,
 
