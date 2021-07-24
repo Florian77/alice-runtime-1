@@ -82,13 +82,16 @@ const {
 } = require("./lib/dashboard-stats");
 
 const {
-    getDataIndex,
-    getCommandIndex,
-    getTriggerIndex,
+    dashboard_queryDataIndex,
+    dashboard_queryCommandIndex,
+    dashboard_queryTriggerIndex,
+} = require("./lib/dashboard-querys");
+
+const {
     getDataContextAggregateList,
     getCommandContextAggregateList,
     getTriggerContextAggregateList,
-} = require("./lib/dashboard-list");
+} = require("./lib/upsert-stats");
 
 const {getItemTriggerIndex} = require("./lib/get-trigger-events");
 const {process} = require("./lib/process");
@@ -188,9 +191,9 @@ module.exports = {
     getUndispatchedDataEventCount,
 
     // dashboard-list
-    getDataIndex,
-    getCommandIndex,
-    getTriggerIndex,
+    dashboard_queryDataIndex,
+    dashboard_queryCommandIndex,
+    dashboard_queryTriggerIndex,
     getDataContextAggregateList,
     getCommandContextAggregateList,
     getTriggerContextAggregateList,
