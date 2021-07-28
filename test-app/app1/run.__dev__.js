@@ -85,12 +85,15 @@ describe('TEST APP 1', function () {
             })
         }
 
+        // todo -> validate data
     })
 
     // -----------------------------------------------------------------------------------------------------------------------------
     it('process insert data', async function () {
 
         await aliceTestEnv.multiProcess(functionPath, 3, processConfig)
+
+        // todo -> validate data
 
     })
 
@@ -108,7 +111,12 @@ describe('TEST APP 1', function () {
 
         await aliceTestEnv.multiProcess(functionPath, 3, processConfig)
 
+        // todo -> validate data
+
     })
+
+
+    // todo -> calc cluster count with queryDataIndex
 
 
     // -----------------------------------------------------------------------------------------------------------------------------
