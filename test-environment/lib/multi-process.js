@@ -1,4 +1,5 @@
 const dc = require("node-dev-console");
+const R = require('ramda');
 const alice = require("../../index");
 const {someThingProcessed} = require("./helper/some-thing-processed");
 
