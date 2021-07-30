@@ -21,7 +21,7 @@ const installTrigger = {
     streamAggregate: CTX1__AGGT1.aggregate,
     streamAggregateId: null,
     lastSequenceNumber: -1,
-    paused: true,
+    // paused: true,
 };
 
 /*

@@ -21,7 +21,7 @@ describe('TEST APP 1', function () {
     const processConfig = {
         showLog: false,
         maxRuntime: 900,
-        maxProcessCycles: 500,
+        maxProcessCycles: 1000,
         maxProcessCommands: 1,
     }
 
@@ -34,13 +34,15 @@ describe('TEST APP 1', function () {
         await aliceTestEnv.connect()
 
         // force use indexes
-        // const res = await alice.getDatabase().executeDbAdminCommand({ setParameter: 1, notablescan: 1 })
-        // dc.j("res", res)
-
+        const res = await alice.getDatabase().admin().command({setParameter: 1, notablescan: 1})
+        dc.j(res, "notablescan")
     })
 
     // -----------------------------------------------------------------------------------------------------------------------------
     after(async () => {
+        const res = await alice.getDatabase().admin().command({setParameter: 1, notablescan: 0})
+        dc.j(res, "notablescan")
+
         await aliceTestEnv.disconnect()
     })
 
@@ -66,7 +68,7 @@ describe('TEST APP 1', function () {
             }
         }
 
-        await aliceTestEnv.singleProcess(functionPath, processConfig)
+        // await aliceTestEnv.singleProcess(functionPath, processConfig)
 
     })
 
@@ -86,30 +88,90 @@ describe('TEST APP 1', function () {
         }
 
         // todo -> validate data
+
     })
 
     // -----------------------------------------------------------------------------------------------------------------------------
-    it('process insert data', async function () {
+    it.skip('multiProcess', async function () {
+        await aliceTestEnv.multiProcess(functionPath, 2, {
+            ...processConfig,
+            maxProcessCommands: 1,
+            // showLog: 1,
+        })
+    })
 
-        await aliceTestEnv.multiProcess(functionPath, 3, processConfig)
+    // -----------------------------------------------------------------------------------------------------------------------------
+    it('singleProcess', async function () {
+        await aliceTestEnv.singleProcess(functionPath, {
+            ...processConfig,
+            maxProcessCommands: 1,
+            // showLog: 1,
+        })
+    })
+
+    // -----------------------------------------------------------------------------------------------------------------------------
+    it.skip('CTX1__AGGT1 -> processCommands', async function () {
+
+        // await aliceTestEnv.multiProcess(functionPath, 3, processConfig)
+        const result = await alice.processCommands({functionPath})
+        dc.j(result, "result")
 
         // todo -> validate data
 
     })
 
     // -----------------------------------------------------------------------------------------------------------------------------
-    it('process aggt2', async function () {
+    it.skip('CTX1__AGGT1 -> dispatchEvents', async function () {
 
-        const result = await alice.getCollectionTriggerIndex().updateMany({
-            ...CTX1__AGGT2,
-        }, {
-            $set: {
-                paused: false,
-            }
-        })
-        dc.j(result, "getCollectionTriggerIndex().updateMany()")
+        const result = await alice.dispatchEvents()
+        dc.j(result, "result")
 
-        await aliceTestEnv.multiProcess(functionPath, 3, processConfig)
+        // todo -> validate data
+
+    })
+
+    // -----------------------------------------------------------------------------------------------------------------------------
+    it.skip('CTX1__AGGT2 -> process trigger', async function () {
+
+        {
+            const result = await alice.getCollectionTriggerIndex().updateMany({
+                ...CTX1__AGGT2,
+            }, {
+                $set: {
+                    paused: false,
+                }
+            })
+            dc.j(result, "getCollectionTriggerIndex().updateMany()")
+        }
+
+        // await aliceTestEnv.multiProcess(functionPath, 3, processConfig)
+
+        {
+            const result = await alice.processTrigger({functionPath})
+            dc.j(result, "result")
+        }
+
+        // todo -> validate data
+
+    })
+
+
+    // -----------------------------------------------------------------------------------------------------------------------------
+    it.skip('CTX1__AGGT2 -> processCommands', async function () {
+
+        const result = await alice.processCommands({functionPath})
+        dc.j(result, "result")
+
+        // todo -> validate data
+
+    })
+
+
+    // -----------------------------------------------------------------------------------------------------------------------------
+    it.skip('CTX1__AGGT2 -> dispatchEvents', async function () {
+
+        const result = await alice.dispatchEvents()
+        dc.j(result, "result")
 
         // todo -> validate data
 

@@ -4,7 +4,7 @@
     "DRIVER": "mongodb",
     "MONGODB": {
       "URL": "mongodb://localhost",
-      "DB": "alice-runtime-test-case"
+      "DB": "alice-runtime-1-test-case"
     },
     "SHOW_DB_CONNECTION_MSG": true,
     "ENCRYPTION_KEY": "--default--local-encryption-key--",
