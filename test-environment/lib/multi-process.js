@@ -4,45 +4,56 @@ const alice = require("../../index");
 const {someThingProcessed} = require("./helper/some-thing-processed");
 
 
+const emptyResult = {
+    processedCycles: 0,
+    executionTime: 0,
+    totalProcessedCommands: 0,
+    totalsDispatchedEvents: 0,
+    totalProcessedTrigger: 0,
+    totalProcessedEvents: 0,
+};
+
+
+function addResults(a, b) {
+    return {
+        processedCycles: a.processedCycles + b.processedCycles,
+        executionTime: a.executionTime + b.executionTime,
+        totalProcessedCommands: a.totalProcessedCommands + b.totalProcessedCommands,
+        totalsDispatchedEvents: a.totalsDispatchedEvents + b.totalsDispatchedEvents,
+        totalProcessedTrigger: a.totalProcessedTrigger + b.totalProcessedTrigger,
+        totalProcessedEvents: a.totalProcessedEvents + b.totalProcessedEvents,
+    };
+}
+
+
 async function multiProcess(functionPath, processCount, config = {}) {
+
     const processConfig = {
         ...config,
         functionPath,
-    }
-    let multiProcessResult, runAgain
+    };
+
+    let totalResult = R.clone(emptyResult), runAgain;
+
     do {
 
-        multiProcessResult = await Promise.all(
+        const resultList = await Promise.all(
             R.map(
                 () => alice.process(processConfig),
                 R.range(0, processCount)
             )
-        )
-        multiProcessResult = R.reduce(
-            (a, b) => ({
-                processedCycles: a.processedCycles + b.processedCycles,
-                executionTime: a.executionTime + b.executionTime,
-                totalProcessedCommands: a.totalProcessedCommands + b.totalProcessedCommands,
-                totalsDispatchedEvents: a.totalsDispatchedEvents + b.totalsDispatchedEvents,
-                totalProcessedTrigger: a.totalProcessedTrigger + b.totalProcessedTrigger,
-                totalProcessedEvents: a.totalProcessedEvents + b.totalProcessedEvents,
-            }),
-            {
-                processedCycles: 0,
-                executionTime: 0,
-                totalProcessedCommands: 0,
-                totalsDispatchedEvents: 0,
-                totalProcessedTrigger: 0,
-                totalProcessedEvents: 0,
-            },
-            multiProcessResult
-        )
-        runAgain = someThingProcessed(multiProcessResult)
-        multiProcessResult.processCount = processCount
+        );
+        // dc.j(resultList, "resultList");
+
+        const processResult = R.reduce(addResults, emptyResult, resultList);
+
+        runAgain = someThingProcessed(processResult);
         if (runAgain) {
-            dc.j(multiProcessResult, "Multi Process Result")
+            totalResult = addResults(totalResult, processResult);
         }
-    } while (runAgain)
+    } while (runAgain);
+
+    return totalResult;
 }
 
 
