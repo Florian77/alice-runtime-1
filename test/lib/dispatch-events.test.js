@@ -142,7 +142,7 @@ describe('lib/dispatch-events.js', function () {
 
         expect(result).to.be.deep.equal({
             "moreToProcess": false,
-            "processedCounter": 4,
+            "processedCounter": 1,
             "runTime": 0,
             "withError": false
         });

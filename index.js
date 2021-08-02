@@ -60,10 +60,8 @@ const {
     activateCronTrigger,
 } = require("./lib/process-trigger");
 
-const {
-    processNextCommand,
-    processCommands,
-} = require("./lib/process-commands");
+const {processCommands} = require("./lib/process-commands");
+const {processNextCommand} = require("./lib/process-next-command");
 
 const {
     dispatchNextEvent,
